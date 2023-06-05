@@ -1,34 +1,111 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Feefty admin test
+
+[Github Repository](https://github.com/Feefty/feefty-admin-test)
+
+## Intro
+
+Welcome to Feefty Admin Test!
+
+The goal of this repo is to be a base to build on, in order to see how you approach web development on a stack similar to ours.
+
+And hopefully, to make it worthwhile for you, we'll use recent tech so you can discover and try new things!
+
+The test is simple, it focuses on creating a simple web app from scratch with a CRUD interface for a list of users.
+
+Please fork this repo first and push it on your own github repo in public. Document your approach along the way in the README and please include a few simple unit tests.
+
+Feefty is a design-driven company first, we'll pay attention to the delivered interface and its closeness to the mockups.
+
+To deliver the test please send us the link to your repo. you don't have to host it anywhere, we'll run it locally.
+
+## Outcome
+
+The goal is to set up a simple CRUD interface for a list of users.
+The final app should include:
+
+- A global "Add user" Button opens a new page with a form to add a user. The form uses the same design of the Edit form minus the Danger zone.
+- A list of users.
+- For each user, an "Edit" button that open a page to edit the user informations. The form include a Delete button to delete the user. The deletion needs a user confirmation before deleting.
+- For each user, an "Activate / Deactivate" button to toggle the user status.
+
+Please respect the mockup [available here on Figma](https://www.figma.com/file/ivV7OQ4cpnh9W2DmaMWn2c/Test-UI?type=design&node-id=0%3A1&t=WRrllQCg4gX3ib4O-1)
+
+![Users Empty](docs/Users_empty.png)
+![Users](docs/Users.png)
+![Users Edit](docs/Users_edit.png)
+![Components](docs/Components.png)
+
+## Stack
+
+### Next.js
+
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) using yarn.
+
+We'll use [Next.js 13 with the new App Router](https://nextjs.org/docs/app) part of the last stable release. It includes a new structure and a different approach to routing with Server Component and [Client component](https://nextjs.org/docs/getting-started/react-essentials#client-components).
+
+Use Server Component as much as possible, but use Client Component when there is interactivity / state management.
+
+Next.js 13 also includes an alpha feature for Server Actions, allowing you to submit form directly from Server Components. This feature is in alpha and is very limited. For example, there is no way to handle errors on the server side currently.
+If you'd like to try it, please do but be aware of the limitations and you'll probably spent much more time to get it right.
+
+Otherwise, simply use fetch to submit the form to an API endpoint like you'd do with a regular Next.js app.
+
+### Prisma / PostgreSQL
+
+We use PostgreSQL on all of our projects and use [Prisma](https://www.prisma.io/docs) as our ORM of choices.
+
+### Tailwind / Styled components
+
+This project is set up to use [Tailwind](https://tailwindcss.com/). We don't usually use Tailwind at Feefty but [styled-components](https://styled-components.com/). Feel free to use the tool you prefer.
+
+### Others
+
+Feel free to use any other library you'd like to use.
+
+The following list are libraries we use in our different projects. This is only for information, you don't have to specifically use them:
+
+- [React Query](https://react-query.tanstack.com/) or [SWR](https://swr.vercel.app/) for data fetching
+- [Formik](https://formik.org/) or [React Hook Form](https://react-hook-form.com/) for form management.
+- [Radix UI](https://www.radix-ui.com/), [Headless UI](https://headlessui.com/), [Ant Design](https://ant.design/components/overview/) or [shadcn/ui](https://ui.shadcn.com/) for UI.
+- [heroicons](https://heroicons.com/) for icons
+- [React Hot Toast](https://react-hot-toast.com/) or [React Toastify](https://fkhadra.github.io/react-toastify/introduction) for Toasts
 
 ## Getting Started
 
-First, run the development server:
+First, install dependencies :
 
 ```bash
-npm run dev
-# or
+yarn
+#or
+yarn install
+```
+
+Create a database for your project, either locally or on a cloud provider.
+
+> **_⚠️_** On cloud provider, you will need to create a [shadow database](https://www.prisma.io/docs/concepts/components/prisma-migrate/shadow-database) manually
+
+Create a `.env` file and setup your database connection :
+
+```env
+DATABASE_URL="postgresql://johndoe:randompassword@localhost:5432/mydb?schema=public"
+```
+
+Run the prisma migration to create the database schema :
+
+```bash
+yarn prisma migrate dev
+```
+
+Run the prisma seed to add test data to the database :
+
+```bash
+yarn prisma seed
+```
+
+Then, run the development server:
+
+```bash
 yarn dev
-# or
-pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
