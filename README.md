@@ -12,7 +12,7 @@ And hopefully, to make it worthwhile for you, we'll use recent tech so you can d
 
 The test is simple, it focuses on creating a simple web app from scratch with a CRUD interface for a list of users.
 
-Please fork this repo first and push it on your own github repo in public. Document your approach along the way in the README and please include a few simple unit tests.
+Please fork this repo first and push it on your own github repo in public.
 
 Feefty is a design-driven company, we'll pay attention to the delivered interface and its closeness to the mockups.
 
@@ -96,12 +96,6 @@ Run the prisma migration to create the database schema :
 yarn prisma migrate dev
 ```
 
-Run the prisma seed to add test data to the database :
-
-```bash
-yarn prisma seed
-```
-
 Then, run the development server:
 
 ```bash
@@ -109,3 +103,12 @@ yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+
+## Delivery
+
+To deliver the test please send us the link to your 
+.
+- You don’t have to host it anywhere, we’ll run it locally
+- Please document your approach along the way in the README
+- Please include a few unit tests
