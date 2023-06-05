@@ -14,18 +14,18 @@ The test is simple, it focuses on creating a simple web app from scratch with a 
 
 Please fork this repo first and push it on your own github repo in public. Document your approach along the way in the README and please include a few simple unit tests.
 
-Feefty is a design-driven company first, we'll pay attention to the delivered interface and its closeness to the mockups.
+Feefty is a design-driven company, we'll pay attention to the delivered interface and its closeness to the mockups.
 
-To deliver the test please send us the link to your repo. you don't have to host it anywhere, we'll run it locally.
+To deliver the test please send us the link to your repo. You don't have to host it anywhere, we'll run it locally.
 
 ## Outcome
 
 The goal is to set up a simple CRUD interface for a list of users.
 The final app should include:
 
-- A global "Add user" Button opens a new page with a form to add a user. The form uses the same design of the Edit form minus the Danger zone.
+- A global "Add user" button opens a new page with a form to add a user. The form uses the same design of the Edit form minus the Danger zone.
 - A list of users.
-- For each user, an "Edit" button that open a page to edit the user informations. The form include a Delete button to delete the user. The deletion needs a user confirmation before deleting.
+- For each user, an "Edit" button that open a page to edit the user information. The form include a Delete button to delete the user. The deletion needs a user confirmation before deleting.
 - For each user, an "Activate / Deactivate" button to toggle the user status.
 
 Please respect the mockup [available here on Figma](https://www.figma.com/file/ivV7OQ4cpnh9W2DmaMWn2c/Test-UI?type=design&node-id=0%3A1&t=WRrllQCg4gX3ib4O-1)
