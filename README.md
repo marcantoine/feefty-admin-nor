@@ -37,26 +37,27 @@ Please respect the mockup [available here on Figma](https://www.figma.com/file/i
 
 ## Stack
 
+### Architecture
+
+We are aiming to adopt Hexagonal Architecture. Please use patterns from Hexagonal / [Clean Code](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) Architecture when appropriate.
+
 ### Next.js
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) using yarn.
 
-We'll use [Next.js 13 with the new App Router](https://nextjs.org/docs/app) part of the last stable release. It includes a new structure and a different approach to routing with Server Component and [Client component](https://nextjs.org/docs/getting-started/react-essentials#client-components).
+We'll use [Next.js 14 with the new App Router](https://nextjs.org/docs/app). It includes a new structure and a different approach to routing with Server Component and [Client component](https://nextjs.org/docs/getting-started/react-essentials#client-components).
 
 Use Server Component as much as possible, but use Client Component when there is interactivity / state management.
 
-Next.js 13 also includes an alpha feature for Server Actions, allowing you to submit form directly from Server Components. This feature is in alpha and is very limited. For example, there is no way to handle errors on the server side currently.
-If you'd like to try it, please do but be aware of the limitations and you'll probably spent much more time to get it right.
-
-Otherwise, simply use fetch to submit the form to an API endpoint like you'd do with a regular Next.js app.
+Next.js 14 also includes Server Actions, allowing you to submit form directly from Server Components. Server Actions allows you to make calls to the server withtout having to code a api endpoint. Next manages the endpoint automatically.
 
 ### Prisma / PostgreSQL
 
 We use PostgreSQL on all of our projects and use [Prisma](https://www.prisma.io/docs) as our ORM of choices.
 
-### Tailwind / Styled components
+### Tailwind
 
-This project is set up to use [Tailwind](https://tailwindcss.com/). We don't usually use Tailwind at Feefty but [styled-components](https://styled-components.com/). Feel free to use the tool you prefer.
+This project is set up to use [Tailwind](https://tailwindcss.com/). It is the recommended approach to work both on server and client components.
 
 ### Others
 
@@ -64,11 +65,12 @@ Feel free to use any other library you'd like to use.
 
 The following list are libraries we use in our different projects. This is only for information, you don't have to specifically use them:
 
-- [React Query](https://react-query.tanstack.com/) or [SWR](https://swr.vercel.app/) for data fetching
-- [Formik](https://formik.org/) or [React Hook Form](https://react-hook-form.com/) for form management.
+- [SWR](https://swr.vercel.app/) for data fetching if needed.
+- [React Hook Form](https://react-hook-form.com/) for form management.
 - [Radix UI](https://www.radix-ui.com/), [Headless UI](https://headlessui.com/), [Ant Design](https://ant.design/components/overview/) or [shadcn/ui](https://ui.shadcn.com/) for UI.
 - [heroicons](https://heroicons.com/) for icons
 - [React Hot Toast](https://react-hot-toast.com/) or [React Toastify](https://fkhadra.github.io/react-toastify/introduction) for Toasts
+- etc ...
 
 ## Getting Started
 
@@ -104,11 +106,10 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-
 ## Delivery
 
-To deliver the test please send us the link to your 
-.
+To deliver the test please send us the link to your repo.
+
 - You don’t have to host it anywhere, we’ll run it locally
 - Please document your approach along the way in the README
-- Please include a few unit tests
+- Please include relevant unit tests
