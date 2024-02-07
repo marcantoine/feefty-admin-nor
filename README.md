@@ -39,9 +39,34 @@ Please respect the mockup [available here on Figma](https://www.figma.com/file/i
 
 ### Architecture
 
-We are aiming to adopt Hexagonal Architecture. Please use patterns from Hexagonal / [Clean Code](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) Architecture when appropriate.
+I tried to follow a ports and adapters architecture while following NextJS app router features.
+I used parenthesus to seperate betwen the layers logic ().
 
-### Next.js
+The objective was to enhance code modularity by adhering to the Dependency Inversion Principle, which involves isolating external dependencies from the core application logic, specifically for operations like adding, creating, and deleting users. To achieve this, we introduced an adapters file dedicated to interacting with external APIs, particularly those provided by Prisma. This adapters file acts as an intermediary layer, handling the retrieval of data from Prisma APIs, and is subsequently invoked by the user interface components to obtain the required data. 
+
+#### Project Tree 
+```
+📦 Feefty
+└─ src
+   ├─ app 
+   │  ├─ (adapters)
+   │  ├─ (ports)
+   │  ├─ api
+   │  │  ├─ activestatus
+   │  │  ├─ user
+   │  │  └─ users
+   │  └─ (useCases)
+   │     ├─ createUser
+   │     └─ editUser
+   ├─ components
+   │  ├─ Buttons
+   │  └─ Icons
+   └─ l
+      └─ prisma
+```
+
+
+### Libraries:
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) using yarn.
 
@@ -105,11 +130,3 @@ yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-## Delivery
-
-To deliver the test please send us the link to your repo.
-
-- You don’t have to host it anywhere, we’ll run it locally
-- Please document your approach along the way in the README
-- Please include relevant unit tests
