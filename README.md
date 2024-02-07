@@ -31,29 +31,46 @@ To deliver the test please send us the link to your repo. You don't have to host
 
 ### Architecture
 
-I followed a ports and adapters architecture with three layers (Adapters, ports (Apis), Use cases(core)) while using NextJS app router features.
-I used parenthesus to seperate betwen the layers logic ().
+I structured my Next.js application using a **Ports and Adapters Architecture** (Known also as hexagonal) with three distinct layers:
 
-The objective was to enhance code modularity by adhering to the Dependency Inversion Principle, which involves isolating external dependencies from the core application logic, specifically for operations like adding, creating, and deleting users. To achieve this, we introduced an adapters file dedicated to interacting with external APIs, particularly those provided by Prisma. This adapters file acts as an intermediary layer, handling the retrieval of data from Prisma APIs, and is subsequently invoked by the user interface components to obtain the required data. 
+  1. **Adapters:** This layer encapsulates integrations with external systems and databases. It handles data communication and provides interfaces for accessing external resources.
+  2. **Ports (APIs):** This layer defines the contracts between the core application and the adapters. It acts as a boundary, ensuring loose coupling and allowing for easy switching of underlying implementations.
+  3. **Use Cases (Core):** This layer contains the heart of the application logic, independent of external infrastructure. It orchestrates business rules and processes data received through the ports.
+
+I effectively utilized Next.js's app router new features to handle client-side navigation and data fetching within the application.
+
+The objective was to enhance code modularity by adhering to the Dependency Inversion Principle, specifically for operations like adding, creating, and deleting users. To achieve this, we introduced an adapters file dedicated to interacting with external APIs.  
+
 
 #### Project Tree 
 ```
-📦 Feefty
+📦 Feefty-admin-test
+├─ prisma
 └─ src
-   ├─ app 
+   ├─ app
    │  ├─ (adapters)
+   │  │  └─ userAdapter.js
    │  ├─ (ports)
-   │  ├─ api
-   │  │  ├─ activestatus
-   │  │  ├─ user
-   │  │  └─ users
-   │  └─ (useCases)
-   │     ├─ createUser
-   │     └─ editUser
-   ├─ components
+   │  │  └─ (ports)
+   │  │     └─ api
+   │  │        ├─ activestatus
+   │  │        │  └─ route.js
+   │  │        ├─ user
+   │  │        │  └─ route.js
+   │  │        └─ users
+   │  │           └─ route.js
+   │  └─ (useCase)
+   │     ├─ editUser
+   │     │  └─ page.js
+   │     └─ createUser
+   │        └─ page.js
+   ├─ Components
    │  ├─ Buttons
-   │  └─ Icons
-   └─ l
+   │  │  ├─ AddButton
+   │  │  └─ ...
+   │  └─ icon
+   │     └─ ...
+   └─ lib
       └─ prisma
 ```
 
