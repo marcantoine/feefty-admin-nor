@@ -4,19 +4,13 @@
 
 ## Intro
 
-Welcome to Feefty Admin Test!
+I tackled feefty's technical test with Next.js and it was both a challenging and enjoyable ride! Diving into the depths of Next.js for the first time and exploring its libraries opened up a new realm of possibilities, making the project an absolute delight. 
 
-The goal of this repo is to be a base to build on, in order to see how you approach web development on a stack similar to ours.
+Although I am not completely satisfied with my final outcome, this experience has firmly positioned Next.js as my preferred JavaScript framework. 
 
-And hopefully, to make it worthwhile for you, we'll use recent tech so you can discover and try new things!
+Its unmatched utility, ease of use, and flexibility have truly captivated me. 
 
-The test is simple, it focuses on creating a simple web app from scratch with a CRUD interface for a list of users.
-
-Please fork this repo first and push it on your own github repo in public.
-
-Feefty is a design-driven company, we'll pay attention to the delivered interface and its closeness to the mockups.
-
-To deliver the test please send us the link to your repo. You don't have to host it anywhere, we'll run it locally.
+Moving forward, I'm excited to continue exploring and building fun projects with Next.js. It's guaranteed to be my go-to framwork for future fullstack projects.
 
 ## Outcome
 
