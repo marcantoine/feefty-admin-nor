@@ -1,28 +1,23 @@
-// import { prisma } from "@/src/lib/prisma/index.js";
-import { prisma } from "@/lib/prisma";
 
-async function getUsers() {
-  const users = await prisma.user.findMany();
-  return users;
-}
+import AddButton from "@/components/Buttons/AddButton";
+import UsersList from "@/components/UsersList";
+import Footer from "@/components/Footer";
+import {Text} from "@radix-ui/themes";
+import Nav from "@/components/Navbr"
 
 export default async function Home() {
-  const users = await getUsers();
-  console.log(users);
-
   return (
-    <main className="my-2 flex flex-col space-y-4">
-      <div className="mx-4">
-        <h1 className="text-lg">Users</h1>
+    <main className="w-full my-2 space-y-4 ">
+      <Nav/>
+      <div className="mx-4 flex justify-between">
+        <Text size="3" weight="bold">Users</Text>
+        <AddButton/>
       </div>
-      <div className="bg-white drop-shadow-lg py-6 px-4 xs:rounded-xl">
-        <p className="text-center text-gray-600 font-medium">Oh well...</p>
-        <p className="text-center text-gray-600 font-normal">
-          Looks like there are no users here yet.
-          <br />
-          Add a new user to see it here!
-        </p>
+      <div className="bg-white drop-shadow-lg p-4" >
+       <UsersList/>    
       </div>
+      <Footer/>
+      
     </main>
   );
 }
