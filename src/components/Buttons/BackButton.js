@@ -1,17 +1,18 @@
-"use Client"
-import React from 'react'
+import Link from "next/link";
 
-import { useRouter } from 'next/navigation';
+/**
+ * In this case, the back button can simply be a link
+ * Without using the router, we can render this component on the server
+ */
 function BackButton() {
-    const router = useRouter();
   return (
     <div>
-
-         <button className="border-transparent text-[#104EE9]"
-                onClick={() =>router.back()}>&lt; Back</button>
-
+      <Link href="/" className="border-transparent text-[#104EE9]">
+        {" "}
+        &lt; Back
+      </Link>
     </div>
-  )
+  );
 }
 
-export default BackButton
+export default BackButton;
